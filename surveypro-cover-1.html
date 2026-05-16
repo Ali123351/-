@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#00E676">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SurveyPro">
+<meta property="og:title" content="SurveyPro — دليل الاستبيانات العالمي">
+<meta property="og:description" content="اربح من الإنترنت من أي مكان في العالم. 50+ موقع، 80+ دولة">
+<title>SurveyPro — دليل الاستبيانات العالمي</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --g: #00E676;
+  --g2: #00C853;
+  --b: #2979FF;
+  --p: #7C4DFF;
+  --bg: #080A0E;
+  --c1: #0F1318;
+  --c2: #161B24;
+  --w: #F0F4FF;
+  --d: #3A4255;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Cairo',sans-serif;
+  background:var(--bg);
+  color:var(--w);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ========== HERO COVER ========== */
+.cover{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  padding:20px;
+}
+
+/* Animated gradient background */
+.cover-bg{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0,230,118,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 80%, rgba(41,121,255,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 10% 60%, rgba(124,77,255,0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #080A0E 0%, #0A0F18 100%);
+  animation: bgPulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes bgPulse{
+  0%{opacity:1;}
+  100%{opacity:0.85;}
+}
+
+/* Grid pattern */
+.cover-grid{
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(0,230,118,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,230,118,0.025) 1px, transparent 1px);
+  background-size:40px 40px;
+  animation:gridMove 20s linear infinite;
+}
+
+@keyframes gridMove{
+  0%{transform:translateY(0);}
+  100%{transform:translateY(40px);}
+}
+
+/* Floating particles */
+.particles{position:absolute;inset:0;pointer-events:none;}
+.particle{
+  position:absolute;
+  width:3px;height:3px;
+  border-radius:50%;
+  background:var(--g);
+  animation:particleFloat linear infinite;
+  opacity:0;
+}
+
+@keyframes particleFloat{
+  0%{transform:translateY(100vh) scale(0);opacity:0;}
+  10%{opacity:0.6;}
+  90%{opacity:0.3;}
+  100%{transform:translateY(-20vh) scale(1);opacity:0;}
+}
+
+/* ICON */
+.app-icon-wrap{
+  position:relative;
+  z-index:2;
+  margin-bottom:32px;
+  animation:iconEntrance 1s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+@keyframes iconEntrance{
+  from{transform:scale(0) rotate(-20deg);opacity:0;}
+  to{transform:scale(1) rotate(0);opacity:1;}
+}
+
+.app-icon{
+  width:140px;
+  height:140px;
+  border-radius:32px;
+  background:linear-gradient(135deg,#00E676,#00C853 50%,#00A040);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  box-shadow:
+    0 0 0 1px rgba(0,230,118,0.3),
+    0 0 60px rgba(0,230,118,0.3),
+    0 30px 80px rgba(0,0,0,0.5);
+  animation:iconPulse 3s ease-in-out infinite;
+}
+
+@keyframes iconPulse{
+  0%,100%{box-shadow:0 0 0 1px rgba(0,230,118,0.3),0 0 60px rgba(0,230,118,0.3),0 30px 80px rgba(0,0,0,0.5);}
+  50%{box-shadow:0 0 0 1px rgba(0,230,118,0.5),0 0 80px rgba(0,230,118,0.5),0 30px 80px rgba(0,0,0,0.5);}
+}
+
+.icon-shine{
+  position:absolute;
+  top:0;left:0;right:0;
+  height:55%;
+  background:linear-gradient(to bottom,rgba(255,255,255,0.25),transparent);
+  border-radius:32px 32px 0 0;
+}
+
+.icon-inner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  position:relative;
+  z-index:1;
+}
+
+.icon-dollar{
+  font-family:'Space Mono',monospace;
+  font-size:52px;
+  font-weight:700;
+  color:#000;
+  line-height:1;
+  text-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+
+.icon-bars{
+  display:flex;
+  gap:4px;
+  align-items:flex-end;
+}
+
+.icon-bar{
+  width:8px;
+  border-radius:2px;
+  background:rgba(0,0,0,0.3);
+}
+.icon-bar:nth-child(1){height:10px;background:rgba(0,0,0,0.25);}
+.icon-bar:nth-child(2){height:16px;background:rgba(0,0,0,0.3);}
+.icon-bar:nth-child(3){height:13px;background:rgba(0,0,0,0.28);}
+.icon-bar:nth-child(4){height:20px;background:rgba(0,0,0,0.35);}
+.icon-bar:nth-child(5){height:14px;background:rgba(0,0,0,0.28);}
+
+/* Notification badge */
+.icon-badge{
+  position:absolute;
+  top:-8px;right:-8px;
+  width:28px;height:28px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#FF5252,#D50000);
+  border:3px solid var(--bg);
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:900;color:white;
+  font-family:'Space Mono',monospace;
+  box-shadow:0 4px 12px rgba(255,82,82,0.4);
+  animation:badgePop 2s ease-in-out infinite;
+}
+
+@keyframes badgePop{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.15);}
+}
+
+/* APP NAME */
+.app-name{
+  position:relative;z-index:2;
+  text-align:center;
+  margin-bottom:12px;
+  animation:fadeUp 0.8s ease 0.3s both;
+}
+
+@keyframes fadeUp{
+  from{transform:translateY(30px);opacity:0;}
+  to{transform:translateY(0);opacity:1;}
+}
+
+.app-name h1{
+  font-family:'Space Mono',monospace;
+  font-size:clamp(36px,8vw,64px);
+  font-weight:700;
+  letter-spacing:4px;
+  line-height:1;
+}
+
+.app-name h1 .green{color:var(--g);}
+.app-name h1 .white{color:var(--w);}
+
+.app-tagline{
+  font-size:15px;
+  color:var(--d);
+  letter-spacing:3px;
+  margin-top:8px;
+  font-weight:400;
+}
+
+/* RATING ROW */
+.rating-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  position:relative;z-index:2;
+  margin-bottom:32px;
+  animation:fadeUp 0.8s ease 0.4s both;
+}
+
+.stars{color:#FFD740;font-size:16px;letter-spacing:2px;}
+.rating-num{
+  font-family:'Space Mono',monospace;
+  font-size:13px;color:var(--d);
+}
+.rating-dot{width:4px;height:4px;border-radius:50%;background:var(--d);}
+.download-count{font-size:13px;color:var(--d);}
+
+/* STATS ROW */
+.stats-row{
+  display:flex;
+  gap:16px;
+  position:relative;z-index:2;
+  margin-bottom:40px;
+  animation:fadeUp 0.8s ease 0.5s both;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.stat-pill{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:40px;
+  padding:10px 20px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  backdrop-filter:blur(10px);
+}
+
+.stat-pill .num{
+  font-family:'Space Mono',monospace;
+  font-size:18px;
+  font-weight:700;
+  color:var(--g);
+}
+
+.stat-pill .lbl{
+  font-size:12px;
+  color:var(--d);
+  letter-spacing:1px;
+}
+
+/* CTA BUTTONS */
+.cta-wrap{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  width:100%;
+  max-width:320px;
+  position:relative;z-index:2;
+  animation:fadeUp 0.8s ease 0.6s both;
+}
+
+.btn-main{
+  background:linear-gradient(135deg,var(--g),var(--g2));
+  color:#000;
+  border:none;
+  border-radius:16px;
+  padding:18px;
+  font-family:'Cairo',sans-serif;
+  font-size:18px;
+  font-weight:900;
+  cursor:pointer;
+  letter-spacing:1px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 8px 32px rgba(0,230,118,0.3);
+  transition:all 0.3s;
+  text-decoration:none;
+  display:block;
+  text-align:center;
+}
+
+.btn-main::before{
+  content:'';
+  position:absolute;
+  top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+  animation:shimmer 3s infinite;
+}
+
+@keyframes shimmer{
+  0%{left:-100%;}
+  100%{left:200%;}
+}
+
+.btn-main:active{transform:scale(0.97);}
+
+.btn-sec{
+  background:rgba(255,255,255,0.05);
+  color:var(--w);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;
+  padding:16px;
+  font-family:'Cairo',sans-serif;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  transition:all 0.3s;
+  text-align:center;
+  display:block;
+  text-decoration:none;
+}
+
+.btn-sec:active{transform:scale(0.97);}
+
+/* SCROLL INDICATOR */
+.scroll-hint{
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
+  z-index:2;
+  animation:fadeUp 1s ease 1s both;
+}
+
+.scroll-dot{
+  width:6px;height:6px;
+  border-radius:50%;
+  background:var(--d);
+  animation:scrollBounce 1.5s ease-in-out infinite;
+}
+
+.scroll-dot:nth-child(2){animation-delay:0.15s;}
+.scroll-dot:nth-child(3){animation-delay:0.3s;}
+
+@keyframes scrollBounce{
+  0%,100%{opacity:0.2;transform:translateY(0);}
+  50%{opacity:1;transform:translateY(6px);}
+}
+
+/* ========== FEATURES SECTION ========== */
+.features{
+  padding:60px 20px;
+  background:var(--c1);
+  border-top:1px solid rgba(0,230,118,0.08);
+}
+
+.section-label{
+  text-align:center;
+  font-size:10px;
+  letter-spacing:5px;
+  color:var(--g);
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+
+.section-title{
+  text-align:center;
+  font-family:'Space Mono',monospace;
+  font-size:clamp(22px,5vw,36px);
+  font-weight:700;
+  color:var(--w);
+  margin-bottom:40px;
+  line-height:1.3;
+}
+
+.section-title span{color:var(--g);}
+
+.features-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:12px;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.feat-card{
+  background:var(--c2);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:20px;
+  padding:24px;
+  position:relative;
+  overflow:hidden;
+  transition:all 0.4s;
+}
+
+.feat-card::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:2px;
+  background:linear-gradient(90deg,transparent,var(--g),transparent);
+  opacity:0;
+  transition:opacity 0.3s;
+}
+
+.feat-card:hover{
+  border-color:rgba(0,230,118,0.15);
+  transform:translateY(-4px);
+}
+
+.feat-card:hover::before{opacity:1;}
+
+.feat-icon-box{
+  width:52px;height:52px;
+  border-radius:14px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;
+  margin-bottom:16px;
+}
+
+.feat-title{
+  font-size:17px;font-weight:700;
+  color:var(--w);margin-bottom:8px;
+}
+
+.feat-desc{
+  font-size:13px;color:var(--d);
+  line-height:1.8;
+}
+
+/* ========== SCREENSHOTS ========== */
+.screenshots{
+  padding:60px 20px;
+  background:var(--bg);
+  overflow:hidden;
+}
+
+.screens-scroll{
+  display:flex;
+  gap:16px;
+  overflow-x:auto;
+  padding:20px 0;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+}
+
+.screens-scroll::-webkit-scrollbar{display:none;}
+
+.screen-item{
+  flex-shrink:0;
+  scroll-snap-align:center;
+  width:220px;
+}
+
+.screen-phone{
+  background:var(--c2);
+  border-radius:28px;
+  border:2px solid rgba(255,255,255,0.08);
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+.screen-notch{
+  width:70px;height:22px;
+  background:var(--c2);
+  border-radius:0 0 14px 14px;
+  margin:0 auto;
+}
+
+.screen-content{
+  padding:12px;
+  min-height:360px;
+}
+
+.screen-label{
+  text-align:center;
+  font-size:12px;
+  color:var(--d);
+  margin-top:12px;
+  letter-spacing:1px;
+}
+
+/* MOCK SCREEN 1 */
+.mock-hero{
+  background:linear-gradient(160deg,#0D1F12,#0A1628);
+  border-radius:16px;
+  padding:20px 14px;
+  min-height:340px;
+  position:relative;
+  overflow:hidden;
+}
+
+.mock-hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background-image:linear-gradient(rgba(0,230,118,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,230,118,0.04) 1px,transparent 1px);
+  background-size:16px 16px;
+}
+
+.mock-logo{
+  font-family:'Space Mono',monospace;
+  font-size:12px;color:var(--g);
+  letter-spacing:2px;margin-bottom:20px;
+  position:relative;z-index:1;
+}
+
+.mock-h1{
+  font-size:16px;font-weight:900;
+  line-height:1.3;color:var(--w);
+  position:relative;z-index:1;
+  margin-bottom:8px;
+}
+
+.mock-sub{
+  font-size:10px;color:var(--d);
+  line-height:1.6;
+  position:relative;z-index:1;
+  margin-bottom:16px;
+}
+
+.mock-stats{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:6px;position:relative;z-index:1;
+}
+
+.mock-stat{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:8px;padding:8px;text-align:center;
+}
+
+.mock-stat .n{
+  font-family:'Space Mono',monospace;
+  font-size:14px;color:var(--g);font-weight:700;
+}
+
+.mock-stat .l{font-size:8px;color:var(--d);}
+
+/* MOCK SCREEN 2 */
+.mock-countries{
+  background:#0F1318;
+  border-radius:16px;
+  padding:14px;
+  min-height:340px;
+}
+
+.mock-country{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:10px;
+  padding:8px 10px;
+  margin-bottom:6px;
+}
+
+.mock-flag{font-size:18px;}
+.mock-cname{font-size:11px;font-weight:700;color:var(--w);}
+.mock-cpay{font-size:9px;color:var(--g);font-family:'Space Mono',monospace;margin-right:auto;}
+.mock-cbtn{
+  background:var(--g);color:#000;
+  border-radius:5px;padding:3px 8px;
+  font-size:9px;font-weight:900;
+}
+
+/* MOCK SCREEN 3 */
+.mock-problems{
+  background:#0F1318;
+  border-radius:16px;
+  padding:14px;
+  min-height:340px;
+}
+
+.mock-prob{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:10px;
+  padding:10px;
+  margin-bottom:6px;
+}
+
+.mock-prob-h{
+  display:flex;align-items:center;gap:6px;
+  font-size:11px;font-weight:700;color:var(--w);
+  margin-bottom:4px;
+}
+
+.mock-prob-step{
+  display:flex;align-items:flex-start;gap:5px;
+  font-size:9px;color:var(--d);line-height:1.5;
+  margin-bottom:3px;
+}
+
+.mock-step-num{
+  width:14px;height:14px;
+  border-radius:50%;
+  background:var(--g);color:#000;
+  font-size:8px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+
+/* ========== TESTIMONIALS ========== */
+.testimonials{
+  padding:60px 20px;
+  background:var(--c1);
+  border-top:1px solid rgba(255,255,255,0.04);
+}
+
+.test-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:12px;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.test-card{
+  background:var(--c2);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:20px;
+  padding:24px;
+}
+
+.test-stars{color:#FFD740;font-size:14px;letter-spacing:2px;margin-bottom:12px;}
+.test-text{
+  font-size:14px;color:rgba(255,255,255,0.7);
+  line-height:1.8;font-style:italic;
+  margin-bottom:16px;
+}
+
+.test-author{display:flex;align-items:center;gap:10px;}
+.test-avatar{
+  width:36px;height:36px;
+  border-radius:50%;
+  background:var(--g);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;
+}
+
+.test-name{font-size:13px;font-weight:700;}
+.test-loc{font-size:11px;color:var(--d);}
+
+/* ========== BOTTOM CTA ========== */
+.bottom-cta{
+  padding:60px 20px;
+  text-align:center;
+  background:var(--bg);
+  border-top:1px solid rgba(0,230,118,0.08);
+  position:relative;
+  overflow:hidden;
+}
+
+.bottom-cta::before{
+  content:'';
+  position:absolute;
+  top:0;left:50%;transform:translateX(-50%);
+  width:600px;height:300px;
+  background:radial-gradient(ellipse,rgba(0,230,118,0.08),transparent 70%);
+}
+
+.bottom-cta h2{
+  font-family:'Space Mono',monospace;
+  font-size:clamp(24px,5vw,40px);
+  font-weight:700;
+  margin-bottom:12px;
+  position:relative;z-index:1;
+}
+
+.bottom-cta h2 span{color:var(--g);}
+
+.bottom-cta p{
+  font-size:15px;color:var(--d);
+  margin-bottom:32px;
+  position:relative;z-index:1;
+  max-width:400px;
+  margin-left:auto;margin-right:auto;
+  line-height:1.8;
+}
+
+.bottom-btn{
+  background:linear-gradient(135deg,var(--g),var(--g2));
+  color:#000;border:none;
+  border-radius:16px;
+  padding:18px 48px;
+  font-family:'Cairo',sans-serif;
+  font-size:18px;font-weight:900;
+  cursor:pointer;
+  position:relative;z-index:1;
+  box-shadow:0 8px 32px rgba(0,230,118,0.3);
+  transition:all 0.3s;
+  display:inline-block;
+  text-decoration:none;
+  overflow:hidden;
+}
+
+.bottom-btn::before{
+  content:'';
+  position:absolute;
+  top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);
+  animation:shimmer 3s infinite;
+}
+
+.bottom-btn:active{transform:scale(0.97);}
+
+/* ========== FOOTER ========== */
+footer{
+  background:var(--c1);
+  border-top:1px solid rgba(255,255,255,0.04);
+  padding:24px 20px;
+  text-align:center;
+}
+
+.footer-logo{
+  font-family:'Space Mono',monospace;
+  font-size:18px;font-weight:700;
+  color:var(--g);letter-spacing:3px;
+  margin-bottom:8px;
+}
+
+footer p{font-size:12px;color:var(--d);letter-spacing:1px;}
+
+/* ========== OPEN APP BUTTON (sticky) ========== */
+.sticky-btn{
+  position:fixed;
+  bottom:20px;left:50%;
+  transform:translateX(-50%);
+  z-index:100;
+  background:linear-gradient(135deg,var(--g),var(--g2));
+  color:#000;border:none;
+  border-radius:50px;
+  padding:14px 32px;
+  font-family:'Cairo',sans-serif;
+  font-size:16px;font-weight:900;
+  cursor:pointer;
+  box-shadow:
+    0 8px 32px rgba(0,230,118,0.4),
+    0 2px 8px rgba(0,0,0,0.3);
+  display:flex;align-items:center;gap:8px;
+  white-space:nowrap;
+  transition:all 0.3s;
+  opacity:0;
+  text-decoration:none;
+  animation:stickyIn 0.5s ease 2s forwards;
+}
+
+@keyframes stickyIn{
+  to{opacity:1;}
+}
+
+.sticky-btn:active{transform:translateX(-50%) scale(0.97);}
+
+.sticky-dot{
+  width:8px;height:8px;
+  border-radius:50%;
+  background:rgba(0,0,0,0.4);
+  animation:pulse 1.5s ease-in-out infinite;
+}
+
+/* RESPONSIVE */
+@media(max-width:480px){
+  .stats-row{gap:8px;}
+  .stat-pill{padding:8px 14px;}
+  .stat-pill .num{font-size:16px;}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY OPEN BUTTON -->
+<a class="sticky-btn" href="survey-guide-app.html">
+  <div class="sticky-dot"></div>
+  افتح التطبيق الآن
+</a>
+
+<!-- ========== HERO ========== -->
+<section class="cover">
+  <div class="cover-bg"></div>
+  <div class="cover-grid"></div>
+
+  <!-- PARTICLES -->
+  <div class="particles" id="particles"></div>
+
+  <!-- ICON -->
+  <div class="app-icon-wrap">
+    <div class="app-icon">
+      <div class="icon-shine"></div>
+      <div class="icon-inner">
+        <div class="icon-dollar">$</div>
+        <div class="icon-bars">
+          <div class="icon-bar"></div>
+          <div class="icon-bar"></div>
+          <div class="icon-bar"></div>
+          <div class="icon-bar"></div>
+          <div class="icon-bar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="icon-badge">NEW</div>
+  </div>
+
+  <!-- NAME -->
+  <div class="app-name">
+    <h1><span class="green">Survey</span><span class="white">Pro</span></h1>
+    <div class="app-tagline">دليل الاستبيانات العالمي</div>
+  </div>
+
+  <!-- RATING -->
+  <div class="rating-row">
+    <span class="stars">★★★★★</span>
+    <span class="rating-num">4.9</span>
+    <div class="rating-dot"></div>
+    <span class="download-count">+50,000 مستخدم</span>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-pill">
+      <span class="num">50+</span>
+      <span class="lbl">موقع</span>
+    </div>
+    <div class="stat-pill">
+      <span class="num">80+</span>
+      <span class="lbl">دولة</span>
+    </div>
+    <div class="stat-pill">
+      <span class="num">$500</span>
+      <span class="lbl">شهرياً</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <a class="btn-main" href="survey-guide-app.html">
+      🚀 افتح التطبيق مجاناً
+    </a>
+    <a class="btn-sec" href="#features">
+      اعرف المزيد ↓
+    </a>
+  </div>
+
+  <!-- SCROLL HINT -->
+  <div class="scroll-hint">
+    <div class="scroll-dot"></div>
+    <div class="scroll-dot"></div>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- ========== FEATURES ========== -->
+<section class="features" id="features">
+  <div class="section-label">✦ مميزات التطبيق ✦</div>
+  <div class="section-title">كل ما تحتاجه<br><span>في مكان واحد</span></div>
+
+  <div class="features-grid">
+    <div class="feat-card">
+      <div class="feat-icon-box" style="background:rgba(0,230,118,0.1)">🌍</div>
+      <div class="feat-title">مواقع لكل دولة</div>
+      <div class="feat-desc">روابط مباشرة لأفضل مواقع الاستبيانات في كل دولة مع الأرباح المتوقعة يومياً.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon-box" style="background:rgba(41,121,255,0.1)">🔧</div>
+      <div class="feat-title">حل جميع المشاكل</div>
+      <div class="feat-desc">حلول مفصّلة لكل مشاكل التسجيل والدفع والسحب والحجب خطوة بخطوة.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon-box" style="background:rgba(255,215,64,0.1)">📚</div>
+      <div class="feat-title">دليل البداية الكامل</div>
+      <div class="feat-desc">من الصفر إلى $500 شهرياً. 6 خطوات مضمونة للمبتدئين والمحترفين.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon-box" style="background:rgba(124,77,255,0.1)">💰</div>
+      <div class="feat-title">مضاعفة الأرباح</div>
+      <div class="feat-desc">إحالة، فيديوهات، مهام، ألعاب، كاشباك — طرق متعددة لزيادة دخلك.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon-box" style="background:rgba(255,82,82,0.1)">📢</div>
+      <div class="feat-title">عروض حصرية</div>
+      <div class="feat-desc">أفضل عروض التسجيل والبونص الترحيبي من كبرى مواقع الاستبيانات.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon-box" style="background:rgba(0,230,118,0.1)">📱</div>
+      <div class="feat-title">يعمل بدون تثبيت</div>
+      <div class="feat-desc">افتحه مباشرة من متصفحك أو أضفه لشاشتك الرئيسية كتطبيق حقيقي.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SCREENSHOTS ========== -->
+<section class="screenshots">
+  <div class="section-label">✦ شاشات التطبيق ✦</div>
+  <div class="section-title" style="margin-bottom:24px">اكتشف<br><span>الواجهة</span></div>
+
+  <div class="screens-scroll">
+
+    <!-- SCREEN 1: HOME -->
+    <div class="screen-item">
+      <div class="screen-phone">
+        <div class="screen-notch"></div>
+        <div class="screen-content">
+          <div class="mock-hero">
+            <div class="mock-logo">SurveyPro</div>
+            <div class="mock-h1">اربح من الإنترنت من أي مكان</div>
+            <div class="mock-sub">دليلك الشامل لمواقع الاستبيانات المدفوعة حول العالم</div>
+            <div class="mock-stats">
+              <div class="mock-stat"><div class="n">50+</div><div class="l">موقع</div></div>
+              <div class="mock-stat"><div class="n">80+</div><div class="l">دولة</div></div>
+              <div class="mock-stat"><div class="n">$500</div><div class="l">شهرياً</div></div>
+              <div class="mock-stat"><div class="n">100%</div><div class="l">مجاني</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-label">الصفحة الرئيسية</div>
+    </div>
+
+    <!-- SCREEN 2: COUNTRIES -->
+    <div class="screen-item">
+      <div class="screen-phone">
+        <div class="screen-notch"></div>
+        <div class="screen-content">
+          <div class="mock-countries">
+            <div style="font-size:11px;font-weight:700;color:var(--w);margin-bottom:10px;">🌍 مواقع حسب الدولة</div>
+            <div class="mock-country">
+              <span class="mock-flag">🇸🇾</span>
+              <span class="mock-cname">سوريا</span>
+              <span class="mock-cpay">$2-8/يوم</span>
+              <span class="mock-cbtn">زيارة</span>
+            </div>
+            <div class="mock-country">
+              <span class="mock-flag">🇸🇦</span>
+              <span class="mock-cname">السعودية</span>
+              <span class="mock-cpay">$5-20/يوم</span>
+              <span class="mock-cbtn">زيارة</span>
+            </div>
+            <div class="mock-country">
+              <span class="mock-flag">🇦🇪</span>
+              <span class="mock-cname">الإمارات</span>
+              <span class="mock-cpay">$8-30/يوم</span>
+              <span class="mock-cbtn">زيارة</span>
+            </div>
+            <div class="mock-country">
+              <span class="mock-flag">🇺🇸</span>
+              <span class="mock-cname">أمريكا</span>
+              <span class="mock-cpay">$15-50/يوم</span>
+              <span class="mock-cbtn">زيارة</span>
+            </div>
+            <div class="mock-country">
+              <span class="mock-flag">🇩🇪</span>
+              <span class="mock-cname">ألمانيا</span>
+              <span class="mock-cpay">$10-40/يوم</span>
+              <span class="mock-cbtn">زيارة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-label">مواقع الدول</div>
+    </div>
+
+    <!-- SCREEN 3: PROBLEMS -->
+    <div class="screen-item">
+      <div class="screen-phone">
+        <div class="screen-notch"></div>
+        <div class="screen-content">
+          <div class="mock-problems">
+            <div style="font-size:11px;font-weight:700;color:var(--w);margin-bottom:10px;">🔧 حل المشاكل</div>
+            <div class="mock-prob">
+              <div class="mock-prob-h">🚫 الموقع محجوب</div>
+              <div class="mock-prob-step"><div class="mock-step-num">1</div><span>حمّل VPN مجاني</span></div>
+              <div class="mock-prob-step"><div class="mock-step-num">2</div><span>اختر سيرفر أمريكي</span></div>
+              <div class="mock-prob-step"><div class="mock-step-num">3</div><span>سجّل في الموقع</span></div>
+            </div>
+            <div class="mock-prob">
+              <div class="mock-prob-h">💳 مشكلة السحب</div>
+              <div class="mock-prob-step"><div class="mock-step-num">1</div><span>افتح Payoneer</span></div>
+              <div class="mock-prob-step"><div class="mock-step-num">2</div><span>اربطه بالموقع</span></div>
+            </div>
+            <div class="mock-prob">
+              <div class="mock-prob-h">❌ رفض التسجيل</div>
+              <div class="mock-prob-step"><div class="mock-step-num">1</div><span>صوّر هويتك بوضوح</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="screen-label">حل المشاكل</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="testimonials">
+  <div class="section-label">✦ آراء المستخدمين ✦</div>
+  <div class="section-title">ماذا قالوا عنه؟</div>
+
+  <div class="test-grid">
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <div class="test-text">"بفضل هذا الدليل بدأت أربح $150 شهرياً من الاستبيانات. حل مشكلة السحب بطريقة احترافية!"</div>
+      <div class="test-author">
+        <div class="test-avatar">🇸🇾</div>
+        <div><div class="test-name">محمد — اللاذقية</div><div class="test-loc">سوريا</div></div>
+      </div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <div class="test-text">"أفضل دليل عربي للاستبيانات. وجدت مواقع ما كنت أعرف عنها وبدأت أربح من أسبوع!"</div>
+      <div class="test-author">
+        <div class="test-avatar">🇪🇬</div>
+        <div><div class="test-name">أحمد — القاهرة</div><div class="test-loc">مصر</div></div>
+      </div>
+    </div>
+    <div class="test-card">
+      <div class="test-stars">★★★★★</div>
+      <div class="test-text">"حل مشكلة حجب المواقع عندي بشكل نهائي. الآن أستخدم 4 مواقع يومياً وأربح بشكل ثابت."</div>
+      <div class="test-author">
+        <div class="test-avatar">🇮🇶</div>
+        <div><div class="test-name">علي — بغداد</div><div class="test-loc">العراق</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BOTTOM CTA ========== -->
+<section class="bottom-cta">
+  <h2>ابدأ الربح<br><span>من اليوم</span></h2>
+  <p>انضم لآلاف المستخدمين الذين يربحون من الإنترنت باستخدام دليلنا الشامل — مجاناً تماماً</p>
+  <a class="bottom-btn" href="survey-guide-app.html">
+    🚀 افتح التطبيق الآن
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">SurveyPro</div>
+  <p>© 2026 SurveyPro · دليل الاستبيانات العالمي · مجاني 100%</p>
+</footer>
+
+<script>
+// PARTICLES
+const container = document.getElementById('particles');
+const colors = ['#00E676','#2979FF','#7C4DFF','#FFD740'];
+for(let i = 0; i < 25; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  p.style.cssText = `
+    left:${Math.random()*100}vw;
+    width:${2+Math.random()*3}px;
+    height:${2+Math.random()*3}px;
+    background:${colors[Math.floor(Math.random()*colors.length)]};
+    animation-duration:${8+Math.random()*12}s;
+    animation-delay:${Math.random()*10}s;
+    opacity:0;
+  `;
+  container.appendChild(p);
+}
+</script>
+</body>
+</html>
